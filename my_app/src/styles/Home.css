@@ -1,0 +1,206 @@
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f0f23;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.home-container::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(78, 205, 196, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(255, 195, 113, 0.1) 0%, transparent 50%);
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.home-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 70px 60px;
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  animation: fadeInScale 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.home-title {
+  font-size: 56px;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 
+    0 0 20px rgba(255, 107, 107, 0.5),
+    0 0 40px rgba(78, 205, 196, 0.3);
+  letter-spacing: -2px;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 20px rgba(255, 107, 107, 0.5),
+      0 0 40px rgba(78, 205, 196, 0.3);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px rgba(255, 107, 107, 0.8),
+      0 0 60px rgba(78, 205, 196, 0.5);
+  }
+}
+
+.home-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 17px;
+  margin-bottom: 50px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.home-btn {
+  padding: 18px 40px;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.home-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.home-btn-login {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+  box-shadow: 
+    0 10px 30px rgba(255, 107, 107, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.home-btn-login:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 15px 40px rgba(255, 107, 107, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.home-btn-login:active {
+  transform: translateY(-1px) scale(1);
+}
+
+.home-btn-signup {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+  box-shadow: 
+    0 10px 30px rgba(78, 205, 196, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.home-btn-signup:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 15px 40px rgba(78, 205, 196, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.home-btn-signup:active {
+  transform: translateY(-1px) scale(1);
+}
+
+.home-decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.circle-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.3) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+  animation: floatRotate 20s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(78, 205, 196, 0.3) 0%, transparent 70%);
+  bottom: -180px;
+  left: -180px;
+  animation: floatRotate 25s ease-in-out infinite reverse;
+}
+
+@keyframes floatRotate {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+}
